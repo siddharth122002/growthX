@@ -11,11 +11,14 @@ function Assignments() {
     const fetchAssignments = async () => {
       const token = localStorage.getItem("token");
       try {
-        const res = await axios.get("http://localhost:3000/assignments", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const res = await axios.get(
+          "https://growth-x-one.vercel.app/assignments",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setAssignments(res.data.taggedAssignments);
         setLoading(false);
       } catch (error) {
@@ -30,11 +33,14 @@ function Assignments() {
     setLoading(true);
     const token = localStorage.getItem("token");
     try {
-      await axios.get(`http://localhost:3000/assignments/${id}/accept`, {
-        headers: {
-          Authorization: token,
-        },
-      });
+      await axios.get(
+        `https://growth-x-one.vercel.app/assignments/${id}/accept`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
       setLoading(false);
       // Update state to reflect the accepted assignment
       setAssignments((prevAssignments) =>
@@ -53,11 +59,14 @@ function Assignments() {
     setLoading(true);
     const token = localStorage.getItem("token");
     try {
-      await axios.get(`http://localhost:3000/assignments/${id}/reject`, {
-        headers: {
-          Authorization: token,
-        },
-      });
+      await axios.get(
+        `https://growth-x-one.vercel.app/assignments/${id}/reject`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
       setLoading(false);
       // Update state to reflect the rejected assignment
       setAssignments((prevAssignments) =>

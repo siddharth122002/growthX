@@ -10,7 +10,7 @@ function Upload() {
   const navigate = useNavigate();
   useEffect(() => {
     const getAdmins = async () => {
-      const res = await axios.get("http://localhost:3000/admins");
+      const res = await axios.get("https://growth-x-one.vercel.app/admins");
       // console.log(res.data);
       setAdmins(res.data);
       setLoading(false);
@@ -24,7 +24,7 @@ function Upload() {
     // console.log(token);
     setLoading(true);
     const res = await axios.post(
-      "http://localhost:3000/upload",
+      "https://growth-x-one.vercel.app/upload",
       {
         assignment,
         admin,

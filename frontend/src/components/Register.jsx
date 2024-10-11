@@ -14,7 +14,7 @@ const Register = () => {
     setLoading(true);
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/register", {
+      const res = await axios.post("https://growth-x-one.vercel.app/register", {
         username,
         password,
         role,
